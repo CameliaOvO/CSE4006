@@ -1,0 +1,40 @@
+<project name="Assignment1" default="compile" basedir=".">
+    <property name="src" value="${basedir}/src" />
+    <property name="classes" value="${basedir}/classes" />
+    <property name="debug" value="Yes" />
+
+    <path id="classpath">
+      <pathelement location="${classes}"/>
+    </path>
+
+    <target name="clean" depends="init">
+        <delete> 
+            <fileset dir="${classes}/">
+                <include name="**/*.class"/>
+                <include name="**/*.jar"/>
+                <exclude name="**/*.sh"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${classes}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac includeantruntime="false" srcdir="${src}/cse4006" destdir="${classes}" debug="${debug}">
+          <classpath refid="classpath"/>
+        </javac>
+        <copy todir="${classes}">
+            <fileset dir="${src}/cse4006" excludes="**/*.java"/>
+        </copy>
+
+        <jar jarfile="${basedir}/hw0.jar">
+            <fileset dir="${classes}">
+                <include name="**/*.class"/>
+                <exclude name="**/*.jar"/>
+            </fileset>
+        </jar>
+
+    </target>
+</project>
