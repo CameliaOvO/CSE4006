@@ -85,6 +85,9 @@ public class FoxImpl implements Fox {
 		world.add(child, breedloc);
 	}
 
+	/**
+	 * call FoxAI and execute, decrease energy. If energy is zero, remove self from world
+	 */
 	@Override
 	public void act(World world) {
 		// TODO Auto-generated method stub

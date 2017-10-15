@@ -89,6 +89,9 @@ public class RabbitImpl implements Rabbit {
 		world.add(child, breedloc);
 	}
 
+	/**
+	 * call RabbitAI and execute, decrease energy. If energy is zero, remove self from world
+	 */
 	@Override
 	public void act(World world) {
 		// TODO Auto-generated method stub

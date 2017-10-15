@@ -14,7 +14,7 @@ import faceduck.skeleton.util.Direction;
 import faceduck.skeleton.util.Location;
 
 /**
- * @author camelia
+ * @author Seonha Park
  * Implement class for Badger
  *
  */
@@ -86,7 +86,7 @@ public class BadgerImpl implements Badger {
 	}
 
 	/**
-	 * call ai and act in world.
+	 * call AI and act in world.
 	 */
 	@Override
 	public void act(World world) {

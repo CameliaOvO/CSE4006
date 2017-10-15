@@ -30,7 +30,7 @@
 			<fileset dir="${src}" excludes="**/*.java"/>
 		</copy>
 
-		<jar jarfile="${basedir}/../hw2.jar">
+		<jar jarfile="${basedir}/../vw.jar">
 			<fileset dir="${classes}">
 				<include name="**/*.class"/>
 				<include name="**/*.jpg"/>

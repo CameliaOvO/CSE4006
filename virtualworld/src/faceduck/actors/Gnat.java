@@ -22,6 +22,10 @@ public class Gnat implements Animal {
 	private static final int BREED_LIMIT = 0;
 	private static final int COOL_DOWN = 0;
 
+	/**
+	 * call GnatAI and execute
+	 */
+
 	@Override
 	public void act(World world) {
 		// TODO Auto-generated method stub
