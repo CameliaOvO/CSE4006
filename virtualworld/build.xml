@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="virtualworld" default="compile" basedir="./../virtualworld">
+	<property name="src" value="${basedir}/src"/>
+	<property name="classes" value="${basedir}/classes"/>
+	<property name="debug" value="Yes"/>
+
+	<path id="classpath">
+		<pathelement location="${classes}"/>
+	</path>
+
+	<target name="clean" depends="init">
+		<delete>
+			<fileset dir="${classes}/">
+				<include name="**/*.class"/>
+				<include name="**/*.jar"/>
+				<exclude name="**/*.sh"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="init">
+		<mkdir dir="${classes}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac includeantruntime="false" srcdir="${src}/faceduck" destdir="${classes}" debug="${debug}">
+			<classpath refid="classpath"/>
+		</javac>
+		<copy todir="${classes}">
+			<fileset dir="${src}" excludes="**/*.java"/>
+		</copy>
+
+		<jar jarfile="${basedir}/../hw2.jar">
+			<fileset dir="${classes}">
+				<include name="**/*.class"/>
+				<include name="**/*.jpg"/>
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<exclude name="**/*.jar"/>
+			</fileset>
+
+    			<manifest>
+      				<attribute name="Main-Class" value="faceduck/skeleton/world/WorldUI"/>
+      			</manifest>
+		</jar>
+
+	</target>
+</project>
