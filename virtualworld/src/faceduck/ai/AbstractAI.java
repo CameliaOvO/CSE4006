@@ -49,7 +49,7 @@ public abstract class AbstractAI implements AI {
 	 *            range which can be viewed at loc
 	 * @param loc
 	 *            location of middle point
-	 * @return ArrayList of Location which is valod and can be viewed at loc.
+	 * @return ArrayList of Location which is valid and can be viewed at loc.
 	 */
 	public ArrayList<Location> viewingarea(World world, int viewrange, Location loc) {
 		ArrayList<Location> viewing = new ArrayList<Location>();

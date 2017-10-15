@@ -63,13 +63,13 @@ public class Gnat implements Animal {
 	@Override
 	public int getMaxEnergy() {
 		// TODO Auto-generated method stub
-		return 0;
+		return MAX_ENERGY;
 	}
 
 	@Override
 	public int getBreedLimit() {
 		// TODO Auto-generated method stub
-		return 0;
+		return BREED_LIMIT;
 	}
 
 	@Override
